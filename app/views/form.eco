@@ -1,0 +1,49 @@
+<form class="petition">
+  <!-- Transfer Course Info -->
+  <div class="control-group">
+    <legend>Transfer Course Info</legend>
+    <div>
+      <label>Transcript (leave empty unless transcript has changed):</label>
+      <!-- TODO: remember the value of this field on reload -->
+      <input type="file" name="userfile"></input>
+    </div>
+    <div>
+      <label>Description:</label>
+      <br />
+      <textarea name="transfer_description" type="text" rows="7" cols="100"  tabindex=2><%= @transfer_description ? '' %></textarea>
+    </div>
+    <div>
+      <label for="ns_syllabus" class="big">Syllabus:</label>
+      <br />
+      <textarea name="transfer_syllabus" class="big_input" type="text" rows="7" cols="100" tabindex=3><%= @transfer_syllabus ? '' %></textarea>
+    </div>
+    <div>
+      <label for="ns_textbooks" class="big">Textbook list:</label>
+      <br />
+      <textarea name="transfer_textbooks" class="big_input" type="text" rows="7" cols="100" tabindex=4><%= @transfer_textbooks ? '' %></textarea>
+    </div>
+  </div>
+
+  <!-- Stanford Course Info -->
+  <fieldset>
+    <legend>Stanford Course Info</legend>
+    <div>
+      <label for="s_description" class="big">Description:</label>
+      <br />
+      <textarea name="stanford_description" class="big_input" type="text" rows="7" cols="100" tabindex=5><%= @stanford_description ? '' %></textarea>
+    </div>
+    <div>
+      <label for="s_syllabus" class="big">Syllabus:</label>
+      <br />
+      <textarea name="stanford_syllabus" class="big_input" type="text" rows="7" cols="100" tabindex=6><%= @stanford_syllabus ? '' %></textarea>
+    </div>
+    <div>
+      <label for="s_textbooks" class="big">Textbook list:</label>
+      <br />
+      <textarea name="stanford_textbooks" class="big_input" type="text" rows="7" cols="100" tabindex=7><%= @stanford_textbooks ? '' %></textarea>
+    </div>
+  </fieldset>
+
+  <input type="submit" class="btn btn-success"></input>
+
+</form>
