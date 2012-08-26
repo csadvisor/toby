@@ -28,7 +28,7 @@ class App extends Spine.Controller
         new Advisee(el: @root)
 
     Spine.Route.setup()
-    Spine.Route.navigate('#/')
+    Spine.Route.navigate(window.location.hash ? '#/')
 
     # define routes
     #    @routes

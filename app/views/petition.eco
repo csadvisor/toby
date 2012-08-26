@@ -1,24 +1,19 @@
-<div class="well item">
-  <div class="row">
-    <div class="span3">
-      <h4>id: <%= @id %></h4>
-      <h4>cid: <%= @cid %></h4>
-      <h4>student_id: <%= @student_id %></h4>
-      <h4>advisor_id: <%= @advisor_id %></h4>
-      <h4>state: <%= @state %></h4>
-      <h4>stanford_description: <%= @stanford_description %></h4>
-      <h4>stanford_syllabus: <%= @stanford_syllabus %></h4>
-      <h4>stanford_textbooks: <%= @stanford_textbooks %></h4>
-      <h4>transfer_description: <%= @transfer_description %></h4>
-      <h4>transfer_syllabus: <%= @transfer_syllabus %></h4>
-      <h4>transfer_textbooks: <%= @transfer_textbooks %></h4>
-      <h4>course_number: <%= @course_number %></h4>
-      <h4>created_on: <%= @created_on %></h4>
-      <h4>last_modified: <%= @last_modified %></h4>
-      <h4>transcript: <%= @transcript %></h4>
-    </div>
-    <div class="item">click me</div>
-    <div class="span1">
-      <a href="#/advisee/petitions/<%= @id %>/edit">Edit</a>
-    </div>
-  </div>
+<table class="table table-striped">
+  <tbody>
+    <tr><td>id</td><td><%= @id %></td></tr>
+    <tr><td>cid</td><td><%= @cid %></td></tr>
+    <tr><td>student_id</td><td><%= @student_id %></td></tr>
+    <tr><td>advisor_id</td><td><%= @advisor_id %></td></tr>
+    <tr><td>state</td><td><%= @state %></td></tr>
+    <tr><td>stanford_description</td><td><%= @stanford_description %></td></tr>
+    <tr><td>stanford_syllabus</td><td><%= @stanford_syllabus %></td></tr>
+    <tr><td>stanford_textbooks</td><td><%= @stanford_textbooks %></td></tr>
+    <tr><td>transfer_description</td><td><%= @transfer_description %></td></tr>
+    <tr><td>transfer_syllabus</td><td><%= @transfer_syllabus %></td></tr>
+    <tr><td>transfer_textbooks</td><td><%= @transfer_textbooks %></td></tr>
+    <tr><td>course_number</td><td><%= @course_number %></td></tr>
+    <tr><td>created_on</td><td><%= @created_on %></td></tr>
+    <tr><td>last_modified</td><td><%= @last_modified %></td></tr>
+    <tr><td>transcript</td><td><%= @transcript %></td></tr>
+  </tbody>
+</table>

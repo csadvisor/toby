@@ -1,4 +1,7 @@
+Petition = require('models/petition')
+
 AdviseeRoot = require('controllers/advisee_root')
+AdviseePetition = require('controllers/advisee_petition')
 
 d = debug('controllers/advisee')
 
@@ -12,13 +15,14 @@ class Advisee extends Spine.Controller
     @routes(@_routes)
 
   _routes:
-    '/': () -> new AdviseeRoot(el: @root)
+
+    '/': () ->
+      new AdviseeRoot(el: @root)
+
     '/petitions/:id': (params) ->
-      @html require('views/advisee/view-wrap')
-      new ViewPetition(el: $('#petition'), id: params.id)
+      new AdviseePetition(el: @root, petition: Petition.find(params.id))
 
     '/petitions/:id/edit': (params) ->
-      @html require('views/advisee/edit-wrap')()
-      new Edit(petition: Petition.find(params.id), el: $('#edit'))
+      new AdviseePetitionEdit(el: @root, petition: Petition.find(params.id))
 
 module.exports = Advisee
