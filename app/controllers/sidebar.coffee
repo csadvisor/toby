@@ -1,32 +1,14 @@
 Petition = require('models/petition')
-Preview = require('controllers/preview')
+
+d = debug('controllers/sidebar')
 
 class Sidebar extends Spine.Controller
-
-  elements:
-    '.items': 'items'
-
-  constructor: () ->
+  constructor: ->
     super
+    Petition.bind('create update', @render)
+    @render()
 
-    #    @html require('views/list')()
-    #
-    #    @list = new List
-    #      el: $('.items')
-    #      template: require('views/preview')
-    #
-    ##   @list.bind 'change', (petition) =>
-    ##     @navigate petition.url()
-    #
-    #    # make sure sidebar stays up to date
-    #    Petition.bind 'create update', () =>
-    #      @render()
-    #
-    #    @render()
-
-
-  render: () ->
-    petitions = Petition.all() # @todo select where conditions
-    @list.render(petitions)
+  render: =>
+    @html require('views/sidebar')(petitions: Petition.all())
     
 module.exports = Sidebar

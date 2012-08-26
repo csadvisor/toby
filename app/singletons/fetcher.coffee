@@ -9,7 +9,7 @@ d = debug('singletons/fetcher')
 
 toLoad = [
   UserCtx
-  #  Petition
+  Petition
 ]
 
 class Fetcher extends Spine.Model

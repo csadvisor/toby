@@ -1,25 +1,18 @@
-Create = require('controllers/create')
-Sidebar = require('controllers/sidebar')
+AdviseeRoot = require('controllers/advisee_root')
 
 d = debug('controllers/advisee')
 
 class Advisee extends Spine.Controller
+  elements: '.root': 'root'
+  render: () -> @html require('views/layouts/advisee')
+
   constructor: () ->
     super
+    @render()
     @routes(@_routes)
 
   _routes:
-    '/': () ->
-      # render template
-      @html require('views/advisee/root-wrap')()
-
-      # add create controller
-      new Create(petition: new Petition(), el: $('#create'))
-
-      # add list controller
-      #new List(where: user: '<current user>', el: $('#list'))
-      new Sidebar(el: $('#sidebar'))
-
+    '/': () -> new AdviseeRoot(el: @root)
     '/petitions/:id': (params) ->
       @html require('views/advisee/view-wrap')
       new ViewPetition(el: $('#petition'), id: params.id)
