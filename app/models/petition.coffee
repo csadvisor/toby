@@ -1,5 +1,3 @@
-Spine = require('spine')
-
 class Petition extends Spine.Model
   fields = [
     'id'
