@@ -31,4 +31,5 @@ exports.config =
         after: ['app/styles/main.css']
 
     templates:
+      defaultExtension: 'eco'
       joinTo: 'javascripts/app.js'

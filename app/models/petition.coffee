@@ -16,8 +16,9 @@ class Petition extends Spine.Model
     'transcript'
   ]
   @configure 'Petition', fields...
-  #@extend Spine.Model.Local
-  @extend Spine.Model.Ajax
+  @extend Spine.Model.Local
+
+  #@extend Spine.Model.Ajax
 
   constructor: () ->
     super

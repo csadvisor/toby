@@ -1,5 +1,3 @@
-Spine = require('spine')
-
 class Preview extends Spine.Controller
   constructor: () ->
     super

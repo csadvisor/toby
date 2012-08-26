@@ -1,5 +1,3 @@
-Spine = require('spine')
-
 class Edit extends Spine.Controller
   constructor: (@petition) ->
     super

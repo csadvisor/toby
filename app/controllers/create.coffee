@@ -1,6 +1,3 @@
-Spine = require('spine')
-Petition = require('models/petition')
-
 class Create extends Spine.Controller
   constructor: () ->
     super

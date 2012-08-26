@@ -3,11 +3,16 @@ class UserCtx extends Spine.Model
     'user_id'
     'role'
   ]
-  @controllers 'UserCtx', fields...
+  @configure 'UserCtx', fields...
 
+  ###
+    @mocked
+    @todo implement this for real
+  ###
   fetch: () ->
-    @role = 'admin'
-    @trigger 'refresh'
+    @role = 'advisee'
+    @trigger('refresh')
 
+# singleton export
 userCtx = new UserCtx
 module.exports = userCtx

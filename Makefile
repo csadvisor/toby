@@ -22,4 +22,4 @@ watch:
 		--compilers coffee:coffee-script \
 		--watch \
 		./test/*.coffee
-	./node_modules/.bin/brunch watch --server
+	./node_modules/.bin/brunch watch
