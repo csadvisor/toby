@@ -24,4 +24,4 @@ class PetitionEdit extends Spine.Controller
       #@log 'Petition created sucessfully', petition
       @navigate '/'
 
-module.exports = Edit
+module.exports = PetitionEdit
