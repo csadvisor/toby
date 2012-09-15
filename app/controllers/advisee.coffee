@@ -25,4 +25,8 @@ class Advisee extends Spine.Controller
     '/petitions/:id/edit': (params) ->
       new AdviseePetitionEdit(el: @root, petition: Petition.find(params.id))
 
+    '/petitions/:id/delete': (params) ->
+      Petition.find(params.id).destroy()
+      @navigate('/')
+
 module.exports = Advisee

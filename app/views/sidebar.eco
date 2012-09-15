@@ -6,6 +6,7 @@
         <th>Petition State</th>
         <th>Edit</th>
         <th>View</th>
+        <th>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -15,6 +16,7 @@
         <td><%= petition.state %></td>
         <td><a href="<%= petition.hurl('edit') %>">edit</a></td>
         <td><a href="<%= petition.hurl() %>">view</a></td>
+        <td><a href="<%= petition.hurl('delete') %>">delete</a></td>
       </tr>
       <% end %>
     </tbody>
