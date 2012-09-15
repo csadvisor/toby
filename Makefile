@@ -2,6 +2,9 @@
 
 all: test
 
+vim:
+	vim -o app/views app/controllers app/models
+
 test_unit: 
 	if test -d ./test/unit; \
 	then \
