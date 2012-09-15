@@ -1,8 +1,8 @@
 Petition = require('models/petition')
 
 AdviseeRoot = require('controllers/advisee/index')
-#AdviseePetitionShow = require('controllers/advisee/petition_show')
-#PetitionPetitionEdit = require('controllers/advisee/petition_edit')
+AdviseePetitionShow = require('controllers/advisee/petition_show')
+AdviseePetitionEdit = require('controllers/advisee/petition_edit')
 
 d = debug('controllers/advisee')
 

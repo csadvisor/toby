@@ -1,7 +1,9 @@
 Fetcher = require('singletons/fetcher')
 UserCtx = require('singletons/user_ctx')
 
-Advisee = require('controllers/advisee')
+Advisee = require('controllers/advisee/router')
+#Admin   = require('controllers/admin/router')
+#Advisor = require('controllers/advisor/router')
 
 d = debug('app')
 

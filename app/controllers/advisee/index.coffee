@@ -1,7 +1,7 @@
 Create = require('controllers/create')
 Sidebar = require('controllers/sidebar')
 
-d = debug('controllers/advisee_root')
+d = debug('controllers/advisee/index')
 
 class AdviseeRoot extends Spine.Controller
   elements:
