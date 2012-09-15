@@ -1,10 +1,20 @@
-PetitionForm = require('controllers/petition_form')
+Create = require('controllers/create')
 
 class AdviseePetitionEdit extends Spine.Controller
-  constructor: () ->
+  elements:
+    '.root': 'root'
+
+  constructor: ->
     super
     @render()
 
-  render: () ->
+  render: ->
     @html require('views/layouts/advisee_petition_edit')
-    new PetitionForm({el: @root, @petition})
+    @petition.one('change', @update)
+    new Create({el: @root, @petition})
+
+  update: =>
+    console.error 'update'
+    @navigate(@petition.url())
+
+module.exports = AdviseePetitionEdit

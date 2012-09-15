@@ -2,6 +2,7 @@ Petition = require('models/petition')
 
 AdviseeRoot = require('controllers/advisee_root')
 AdviseePetition = require('controllers/advisee_petition')
+AdviseePetitionEdit = require('controllers/advisee_petition_edit')
 
 d = debug('controllers/advisee')
 
