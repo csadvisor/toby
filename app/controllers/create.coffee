@@ -20,6 +20,8 @@ class Create extends Spine.Controller
     else
       # show success message
       d 'Petition created sucessfully', petition
+      @petition = null
+      @render()
 
     
 module.exports = Create
