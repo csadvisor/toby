@@ -1,32 +1,24 @@
 <% if @petitions.length > 0: %>
-  <% for petition in @petitions: %>
-    <div class="well item">
-      <div class="row">
-        <div class="span3">
-          <h4>id: <%= petition.id %></h4>
-          <h4>cid: <%= petition.cid %></h4>
-          <h4>student_id: <%= petition.student_id %></h4>
-          <h4>advisor_id: <%= petition.advisor_id %></h4>
-          <h4>state: <%= petition.state %></h4>
-          <h4>stanford_description: <%= petition.stanford_description %></h4>
-          <h4>stanford_syllabus: <%= petition.stanford_syllabus %></h4>
-          <h4>stanford_textbooks: <%= petition.stanford_textbooks %></h4>
-          <h4>transfer_description: <%= petition.transfer_description %></h4>
-          <h4>transfer_syllabus: <%= petition.transfer_syllabus %></h4>
-          <h4>transfer_textbooks: <%= petition.transfer_textbooks %></h4>
-          <h4>course_number: <%= petition.course_number %></h4>
-          <h4>created_on: <%= petition.created_on %></h4>
-          <h4>last_modified: <%= petition.last_modified %></h4>
-          <h4>transcript: <%= petition.transcript %></h4>
-        </div>
-        <div class="item">click me</div>
-        <div class="span1">
-          <a href="#/petitions/<%= petition.id %>/edit">Edit</a>
-          <a href="#/petitions/<%= petition.id %>">View</a>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Course Number</th>
+        <th>Petition State</th>
+        <th>Edit</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for petition in @petitions: %>
+      <tr class="<%= petition.getClass() %>">
+        <td><%= petition.course_number %></td>
+        <td><%= petition.state %></td>
+        <td><a href="<%= petition.hurl('edit') %>">edit</a></td>
+        <td><a href="<%= petition.hurl() %>">view</a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 <% else: %>
   <h4>No petitions</h4>
 <% end %>
