@@ -17,13 +17,21 @@ class Petition extends Spine.Model
   ]
   @configure 'Petition', fields...
   @extend Spine.Model.Local
-
-  #@extend Spine.Model.Ajax
+  @extend Spine.Model.Ajax
 
   constructor: () ->
     super
 
     # set default values
     @state = 'pending'
+
+  getClass: ->
+    switch @state
+      when 'pending' then 'info'
+      when 'approved', 'processed' then 'success'
+      when 'rejected' then 'error'
+
+  hurl: (args...) ->
+    "##{@url(args...)}"
 
 module.exports = Petition

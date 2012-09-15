@@ -13,13 +13,13 @@ class Create extends Spine.Controller
 
   create: (e) ->
     e.preventDefault()
-    petition = Petition.fromForm(e.target)
-    errors = petition.save()
+    @petition.fromForm(e.target)
+    @petition.save()
     unless errors
       d 'Error create petition', errors
     else
       # show success message
-      d 'Petition created sucessfully', petition
+      d 'Petition created sucessfully', @petition
       @petition = null
       @render()
 
