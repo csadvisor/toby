@@ -14,7 +14,7 @@ class AdviseeRoot extends Spine.Controller
 
   render: () ->
     d 'render'
-    @html require('views/layouts/advisee_root')
+    @html require('views/layouts/advisee/index')
 
     @controllerCreate = new PetitionForm(el: @elCreate, petition: new Petition())
     @controllerSidebar = new PetitionList(el: @elSidebar)

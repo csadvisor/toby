@@ -11,7 +11,7 @@ class PetitionList extends Spine.Controller
   render: =>
     petitions = @getPetitions()
     d 'render', petitions
-    @html require('views/sidebar')({petitions})
+    @html require('views/petition_list')({petitions})
 
   getPetitions: ->
     if @status

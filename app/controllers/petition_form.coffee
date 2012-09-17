@@ -5,7 +5,7 @@ class PetitionForm extends Spine.Controller
     'submit form.petition': 'create'
 
   render: () ->
-    @html require('views/form')(@petition)
+    @html require('views/petition_form')(@petition)
 
   constructor: () ->
     super
