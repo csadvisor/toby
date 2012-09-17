@@ -16,9 +16,9 @@ class GehartRoute extends Spine.Controller
   add: (controller) ->
     @controllers.push(controller)
 
-  render: ->
+  render: (data) ->
     @debug 'rendering'
-    @html require("views/#{@constructor.role}/#{@constructor.fileName}")
+    @html require("views/#{@constructor.role}/#{@constructor.fileName}")(data)
 
 
 module.exports = GehartRoute

@@ -1,17 +1,19 @@
 PetitionForm = require('controllers/petition_form')
+GehartRoute = require('controllers/gerhart_route')
 
-class AdviseePetitionEdit extends Spine.Controller
+class AdviseePetitionEdit extends GehartRoute
+  @configure 'AdviseePetitionEdit'
+
   elements:
     '.root': 'root'
 
-  constructor: ->
-    super
-    @render()
+  bind: ->
+    @petition.one('change', @update)
 
   render: ->
-    @html require('views/advisee/petition_edit')
-    @petition.one('change', @update)
-    new PetitionForm({el: @root, @petition})
+    super
+    @add form = new PetitionForm({el: @root, @petition})
+    form.render()
 
   update: =>
     console.error 'update'

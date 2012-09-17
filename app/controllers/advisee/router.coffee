@@ -27,7 +27,8 @@ class AdviseeRouter extends GehartRoute
       controller.render()
 
     '/petitions/:id/edit': (params) ->
-      new AdviseePetitionEdit(el: @root, petition: Petition.find(params.id))
+      @add controller = new AdviseePetitionEdit(el: @root, petition: Petition.find(params.id))
+      controller.render()
 
     '/petitions/:id/delete': (params) ->
       Petition.find(params.id).destroy()
