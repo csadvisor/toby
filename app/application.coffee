@@ -27,7 +27,8 @@ class App extends Spine.Controller
       #when 'admin'
       #when 'advisor'
       when 'advisee'
-        new Advisee(el: @root)
+        controller = new Advisee(el: @root)
+        controller.render()
 
     Spine.Route.setup()
     Spine.Route.navigate(window.location.hash ? '#/')

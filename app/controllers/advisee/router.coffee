@@ -3,27 +3,28 @@ Petition = require('models/petition')
 AdviseeRoot = require('controllers/advisee/index')
 AdviseePetitionShow = require('controllers/advisee/petition_show')
 AdviseePetitionEdit = require('controllers/advisee/petition_edit')
+GehartRoute = require('controllers/gerhart_route')
 
 d = debug('controllers/advisee')
 
-class Advisee extends Spine.Controller
-  elements: '.root': 'root'
+class AdviseeRouter extends GehartRoute
+  @configure 'AdviseeRouter'
 
-  render: ->
-    @html require('views/advisee/router')
+  elements: '.root': 'root'
 
   constructor: ->
     super
-    @render()
     @routes(@_routes)
 
   _routes:
 
     '/': () ->
-      new AdviseeRoot(el: @root)
+      @add controller = new AdviseeRoot(el: @root)
+      controller.render()
 
     '/petitions/:id': (params) ->
-      new AdviseePetitionShow(el: @root, petition: Petition.find(params.id))
+      @add controller = new AdviseePetitionShow(el: @root, petition: Petition.find(params.id))
+      controller.render()
 
     '/petitions/:id/edit': (params) ->
       new AdviseePetitionEdit(el: @root, petition: Petition.find(params.id))
@@ -32,4 +33,4 @@ class Advisee extends Spine.Controller
       Petition.find(params.id).destroy()
       @navigate('/')
 
-module.exports = Advisee
+module.exports = AdviseeRouter

@@ -1,16 +1,18 @@
 Petition = require('models/petition')
+GehartRoute = require('controllers/gerhart_route')
 
-d = debug('controllers/petition_list')
+class PetitionList extends GehartRoute
+  @configure 'PetitionList'
 
-class PetitionList extends Spine.Controller
-  constructor: ->
-    super
-    Petition.bind('create update', @render)
-    @render()
+  events = 'create update'
 
+  bind: ->
+    Petition.bind(events, @render)
+
+  # @override
   render: =>
     petitions = @getPetitions()
-    d 'render', petitions
+    @debug 'render', petitions
     @html require('views/petition_list')({petitions})
 
   getPetitions: ->
@@ -18,5 +20,9 @@ class PetitionList extends Spine.Controller
       Petition.findAllByAttribute('status', @status)
     else
       Petition.all()
+
+  release: ->
+    super
+    Petition.unbind(events, @render)
     
 module.exports = PetitionList

@@ -1,22 +1,20 @@
 PetitionForm = require('controllers/petition_form')
 PetitionList = require('controllers/petition_list')
+GehartRoute = require('controllers/gerhart_route')
 
-d = debug('controllers/advisee/index')
+class AdviseeIndex extends GehartRoute
+  @configure 'AdviseeIndex'
 
-class AdviseeRoot extends Spine.Controller
   elements:
     '.create': 'elCreate'
     '.sidebar': 'elSidebar'
 
-  constructor: () ->
-    super
-    @render()
-
   render: () ->
-    d 'render'
-    @html require('views/advisee/index')
+    super
 
-    @controllerCreate = new PetitionForm(el: @elCreate, petition: new Petition())
-    @controllerSidebar = new PetitionList(el: @elSidebar)
+    @add create = new PetitionForm(el: @elCreate, petition: new Petition())
+    @add sidebar = new PetitionList(el: @elSidebar)
+    create.render()
+    sidebar.render()
 
-module.exports = AdviseeRoot
+module.exports = AdviseeIndex

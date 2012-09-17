@@ -16,7 +16,7 @@ String::removeFirst = (delimiter) ->
   rest = split.join(delimiter)
   {first, rest}
 
-String::parseName = ->
+String::parseRouteName = ->
   {first, rest} = @unCamel().removeFirst('_')
   role: first, fileName: rest
 
