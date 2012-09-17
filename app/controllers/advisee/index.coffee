@@ -1,5 +1,5 @@
-Create = require('controllers/create')
-Sidebar = require('controllers/sidebar')
+PetitionForm = require('controllers/petition_form')
+PetitionList = require('controllers/petition_list')
 
 d = debug('controllers/advisee/index')
 
@@ -16,7 +16,7 @@ class AdviseeRoot extends Spine.Controller
     d 'render'
     @html require('views/layouts/advisee_root')
 
-    @controllerCreate = new Create(el: @elCreate, petition: new Petition())
-    @controllerSidebar = new Sidebar(el: @elSidebar)
+    @controllerCreate = new PetitionForm(el: @elCreate, petition: new Petition())
+    @controllerSidebar = new PetitionList(el: @elSidebar)
 
 module.exports = AdviseeRoot

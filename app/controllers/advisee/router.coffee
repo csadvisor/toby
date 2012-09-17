@@ -8,9 +8,11 @@ d = debug('controllers/advisee')
 
 class Advisee extends Spine.Controller
   elements: '.root': 'root'
-  render: () -> @html require('views/layouts/advisee')
 
-  constructor: () ->
+  render: ->
+    @html require('views/layouts/advisee')
+
+  constructor: ->
     super
     @render()
     @routes(@_routes)

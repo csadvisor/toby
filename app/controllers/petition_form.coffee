@@ -1,6 +1,6 @@
 d = debug('controllers/create')
 
-class Create extends Spine.Controller
+class PetitionForm extends Spine.Controller
   events:
     'submit form.petition': 'create'
 
@@ -14,14 +14,15 @@ class Create extends Spine.Controller
   create: (e) ->
     e.preventDefault()
     @petition.fromForm(e.target)
-    @petition.save()
-    unless errors
+    @petition.bind 'error', (errors) ->
       d 'Error create petition', errors
-    else
+    @petition.bind 'success', () ->
       # show success message
       d 'Petition created sucessfully', @petition
       @petition = null
       @render()
 
+    @petition.save()
+
     
-module.exports = Create
+module.exports = PetitionForm

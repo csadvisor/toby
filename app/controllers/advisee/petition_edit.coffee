@@ -1,4 +1,4 @@
-Create = require('controllers/create')
+PetitionForm = require('controllers/petition_form')
 
 class AdviseePetitionEdit extends Spine.Controller
   elements:
@@ -11,7 +11,7 @@ class AdviseePetitionEdit extends Spine.Controller
   render: ->
     @html require('views/layouts/advisee_petition_edit')
     @petition.one('change', @update)
-    new Create({el: @root, @petition})
+    new PetitionForm({el: @root, @petition})
 
   update: =>
     console.error 'update'
