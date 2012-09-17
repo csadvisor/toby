@@ -3,11 +3,11 @@ Petition = require('models/petition')
 AdviseeRoot = require('controllers/advisee/index')
 AdviseePetitionShow = require('controllers/advisee/petition_show')
 AdviseePetitionEdit = require('controllers/advisee/petition_edit')
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
 d = debug('controllers/advisee')
 
-class AdviseeRouter extends GehartRoute
+class AdviseeRouter extends GerhartRoute
   @configure 'AdviseeRouter'
 
   elements: '.root': 'root'

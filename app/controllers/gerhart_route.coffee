@@ -1,6 +1,6 @@
 Spine = require('lib/g')('spine')
 
-class GehartRoute extends Spine.Controller
+class GerhartRoute extends Spine.Controller
   @configure: (@name) ->
     {@role, @fileName} = @name.parseRouteName()
 
@@ -21,4 +21,4 @@ class GehartRoute extends Spine.Controller
     @html require("views/#{@constructor.role}/#{@constructor.fileName}")(data)
 
 
-module.exports = GehartRoute
+module.exports = GerhartRoute

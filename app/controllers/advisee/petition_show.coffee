@@ -1,7 +1,7 @@
 PetitionShow = require('controllers/petition_show')
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
-class AdviseePetitionShow extends GehartRoute
+class AdviseePetitionShow extends GerhartRoute
   @configure 'AdviseePetitionShow'
 
   elements:

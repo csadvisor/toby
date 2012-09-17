@@ -1,6 +1,6 @@
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
-class PetitionForm extends GehartRoute
+class PetitionForm extends GerhartRoute
   @configure 'PetitionForm'
 
   events:

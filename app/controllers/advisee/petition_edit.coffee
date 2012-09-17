@@ -1,7 +1,7 @@
 PetitionForm = require('controllers/petition_form')
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
-class AdviseePetitionEdit extends GehartRoute
+class AdviseePetitionEdit extends GerhartRoute
   @configure 'AdviseePetitionEdit'
 
   elements:

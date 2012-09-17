@@ -1,7 +1,7 @@
 Petition = require('models/petition')
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
-class PetitionList extends GehartRoute
+class PetitionList extends GerhartRoute
   @configure 'PetitionList'
 
   events = 'create update'

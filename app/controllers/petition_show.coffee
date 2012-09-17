@@ -1,6 +1,6 @@
-GehartRoute = require('controllers/gerhart_route')
+GerhartRoute = require('controllers/gerhart_route')
 
-class AdviseePetition extends GehartRoute
+class AdviseePetition extends GerhartRoute
   @configure 'AdviseePetition'
 
   render: () ->
