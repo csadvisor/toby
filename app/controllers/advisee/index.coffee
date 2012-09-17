@@ -13,7 +13,7 @@ class AdviseeIndex extends GerhartRoute
     super
 
     @add create = new PetitionForm(el: @elCreate, petition: new Petition())
-    @add sidebar = new PetitionList(el: @elSidebar)
+    @add sidebar = new PetitionList(el: @elSidebar, columns: ['edit', 'view', 'delete'])
     create.render()
     sidebar.render()
 

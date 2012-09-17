@@ -2,7 +2,7 @@ Fetcher = require('singletons/fetcher')
 UserCtx = require('singletons/user_ctx')
 
 Advisee = require('controllers/advisee/router')
-#Admin   = require('controllers/admin/router')
+Admin   = require('controllers/admin/router')
 #Advisor = require('controllers/advisor/router')
 
 d = debug('app')
@@ -24,7 +24,9 @@ class App extends Spine.Controller
 
   refresh: () =>
     switch UserCtx.role
-      #when 'admin'
+      when 'admin'
+        controller = new Admin(el: @root)
+        controller.render()
       #when 'advisor'
       when 'advisee'
         controller = new Advisee(el: @root)

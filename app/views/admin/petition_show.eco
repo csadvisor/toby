@@ -1,0 +1,5 @@
+<h1>
+  <a href="<%= @hurl('print') %>">Print</a>
+  <a href="<%= @hurl('process') %>">Process</a>
+</h1>
+<div class="root"></div>

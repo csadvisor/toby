@@ -13,11 +13,11 @@ class PetitionList extends GerhartRoute
   render: =>
     petitions = @getPetitions()
     @debug 'render', petitions
-    @html require('views/petition_list')({petitions})
+    @html require('views/petition_list')({petitions, @columns})
 
   getPetitions: ->
-    if @status
-      Petition.findAllByAttribute('status', @status)
+    if @state
+      Petition.findAllByAttribute('state', @state)
     else
       Petition.all()
 

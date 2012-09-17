@@ -4,9 +4,11 @@
       <tr>
         <th>Course Number</th>
         <th>Petition State</th>
-        <th>Edit</th>
-        <th>View</th>
-        <th>Delete</th>
+        <% for column in @columns: %>
+          <% if column is 'edit': %><th>Edit</th><% end %>
+          <% if column is 'view': %><th>View</th><% end %>
+          <% if column is 'delete': %><th>Delete</th><% end %>
+        <% end %>
       </tr>
     </thead>
     <tbody>
@@ -14,9 +16,9 @@
       <tr class="<%= petition.getClass() %>">
         <td><%= petition.course_number %></td>
         <td><%= petition.state %></td>
-        <td><a href="<%= petition.hurl('edit') %>">edit</a></td>
-        <td><a href="<%= petition.hurl() %>">view</a></td>
-        <td><a href="<%= petition.hurl('delete') %>">delete</a></td>
+        <% if column is 'edit': %><td><a href="<%= petition.hurl('edit') %>">edit</a></td><% end %>
+        <% if column is 'view': %><td><a href="<%= petition.hurl() %>">view</a></td><% end %>
+        <% if column is 'delete': %><td><a href="<%= petition.hurl('delete') %>">delete</a></td><% end %>
       </tr>
       <% end %>
     </tbody>
