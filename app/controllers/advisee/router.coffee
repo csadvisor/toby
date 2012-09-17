@@ -10,7 +10,7 @@ class Advisee extends Spine.Controller
   elements: '.root': 'root'
 
   render: ->
-    @html require('views/layouts/advisee')
+    @html require('views/advisee/router')
 
   constructor: ->
     super

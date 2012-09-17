@@ -9,7 +9,7 @@ class AdviseePetitionEdit extends Spine.Controller
     @render()
 
   render: ->
-    @html require('views/layouts/advisee_petition_edit')
+    @html require('views/advisee/petition_edit')
     @petition.one('change', @update)
     new PetitionForm({el: @root, @petition})
 

@@ -4,7 +4,7 @@ class AdviseePetition extends Spine.Controller
     @render()
 
   render: () ->
-    @html require('views/petition')(@petition)
+    @html require('views/petition_show')(@petition)
 
     
 module.exports = AdviseePetition
