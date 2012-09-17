@@ -2,9 +2,6 @@ Petition = require('models/petition')
 
 AdminRoot = require('controllers/admin/index')
 AdminPetitionShow = require('controllers/admin/petition_show')
-#AdviseeRoot = require('controllers/advisee/index')
-#AdviseePetitionShow = require('controllers/advisee/petition_show')
-#AdviseePetitionEdit = require('controllers/advisee/petition_edit')
 GerhartRoute = require('controllers/gerhart_route')
 
 
