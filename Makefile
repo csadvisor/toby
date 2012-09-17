@@ -5,20 +5,21 @@ all: test
 vim:
 	vim -o app/views app/controllers/advisee.coffee app/models/petition.coffee
 
-test_unit: 
-	if test -d ./test/unit; \
-	then \
-	./node_modules/.bin/mocha \
-		--compilers coffee:coffee-script \
-		--reporter spec \
-		./test/unit/*.coffee; \
-	fi
+#test_unit: 
+#	@NODE_PATH=`pwd`/app if test -d ./test/unit; \
+#	then \
+#	./node_modules/.bin/mocha \
+#		--compilers coffee:coffee-script \
+#		--reporter spec \
+#		./test/unit/*.coffee; \
+#	fi
 
-test: test_unit
-	./node_modules/.bin/mocha \
+#test: test_unit
+test:
+	@NODE_PATH=/home/csadvisor/petitions/app ./node_modules/.bin/mocha \
 		--compilers coffee:coffee-script \
 		--reporter spec \
-		./test/*.coffee
+		./test/unit/*.coffee
 
 watch:
 	./node_modules/.bin/mocha \
