@@ -11,7 +11,8 @@ class UserCtx extends Spine.Model
   ###
   fetch: () ->
     #@role = 'advisee'
-    @role = 'admin'
+    #@role = 'admin'
+    @role = 'advisor'
     @trigger('refresh')
 
 # singleton export

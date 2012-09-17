@@ -29,7 +29,7 @@ class Petition extends Spine.Model
     switch @state
       when 'pending' then 'info'
       when 'approved', 'processed' then 'success'
-      when 'rejected' then 'error'
+      when 'declined' then 'error'
 
   hurl: (args...) ->
     "##{@url(args...)}"

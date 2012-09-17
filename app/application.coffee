@@ -3,7 +3,7 @@ UserCtx = require('singletons/user_ctx')
 
 Advisee = require('controllers/advisee/router')
 Admin   = require('controllers/admin/router')
-#Advisor = require('controllers/advisor/router')
+Advisor = require('controllers/advisor/router')
 
 d = debug('app')
 
@@ -23,14 +23,13 @@ class App extends Spine.Controller
     Fetcher.fetchAll()
 
   refresh: () =>
-    switch UserCtx.role
-      when 'admin'
-        controller = new Admin(el: @root)
-        controller.render()
-      #when 'advisor'
-      when 'advisee'
-        controller = new Advisee(el: @root)
-        controller.render()
+    #switch UserCtx.role
+    #switch 'admin'
+    switch 'advisor'
+      when 'admin' then controller = new Admin(el: @root)
+      when 'advisor' then controller = new Advisor(el: @root)
+      when 'advisee' then controller = new Advisee(el: @root)
+    controller.render()
 
     Spine.Route.setup()
     Spine.Route.navigate(window.location.hash ? '#/')
