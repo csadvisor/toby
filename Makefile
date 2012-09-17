@@ -3,7 +3,7 @@
 all: test
 
 vim:
-	vim -o app/views app/controllers/advisee.coffee app/models/petition.coffee
+	vim -o app/views app/controllers app/models/petition.coffee
 
 #test_unit: 
 #	@NODE_PATH=`pwd`/app if test -d ./test/unit; \
