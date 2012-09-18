@@ -34,4 +34,11 @@ class Petition extends Spine.Model
   hurl: (args...) ->
     "##{@url(args...)}"
 
+  @states: [
+    'approved'
+    'declined'
+    'pending'
+    'processed'
+  ]
+
 module.exports = Petition

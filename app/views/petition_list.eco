@@ -1,3 +1,12 @@
+<ul class="nav nav-pills filters">
+
+  <% selected = @state %>
+  <% for state in @states: %>
+    <li <% if state is selected: %>class="active"<% end %>>
+      <a href="#" value="<%= state %>"><%= state.capitalize() %></a>
+    </li>
+  <% end %>
+</ul>
 <% if @petitions.length > 0: %>
   <table class="table">
     <thead>
@@ -16,9 +25,11 @@
       <tr class="<%= petition.getClass() %>">
         <td><%= petition.course_number %></td>
         <td><%= petition.state %></td>
-        <% if column is 'edit': %><td><a href="<%= petition.hurl('edit') %>">edit</a></td><% end %>
-        <% if column is 'view': %><td><a href="<%= petition.hurl() %>">view</a></td><% end %>
-        <% if column is 'delete': %><td><a href="<%= petition.hurl('delete') %>">delete</a></td><% end %>
+        <% for column in @columns: %>
+          <% if column is 'edit': %><td><a href="<%= petition.hurl('edit') %>">edit</a></td><% end %>
+          <% if column is 'view': %><td><a href="<%= petition.hurl() %>">view</a></td><% end %>
+          <% if column is 'delete': %><td><a href="<%= petition.hurl('delete') %>">delete</a></td><% end %>
+        <% end %>
       </tr>
       <% end %>
     </tbody>

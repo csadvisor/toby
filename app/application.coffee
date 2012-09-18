@@ -24,8 +24,9 @@ class App extends Spine.Controller
 
   refresh: () =>
     #switch UserCtx.role
-    #switch 'admin'
-    switch 'advisor'
+    #switch 'advisor'
+    #switch 'advisee'
+    switch 'admin'
       when 'admin' then controller = new Admin(el: @root)
       when 'advisor' then controller = new Advisor(el: @root)
       when 'advisee' then controller = new Advisee(el: @root)

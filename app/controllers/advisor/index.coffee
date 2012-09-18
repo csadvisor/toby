@@ -16,7 +16,11 @@ class AdvisorIndex extends GerhartRoute
 
   render: ->
     super
-    @add @list = new PetitionList({el: @root, @state, columns: ['view']})
+    el = @root
+    states = ['all'].concat Petition.states
+    columns = ['view']
+    state = 'pending'
+    @add @list = new PetitionList({el: @root, @state, columns, state, states})
     @list.render()
 
   filter: (e) ->
