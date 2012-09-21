@@ -17,6 +17,6 @@ class AdviseePetitionEdit extends GerhartRoute
 
   update: =>
     console.error 'update'
-    @navigate(@petition.url())
+    @navigate(@petition.hurl())
 
 module.exports = AdviseePetitionEdit
