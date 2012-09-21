@@ -1,3 +1,5 @@
+Petition = require('models/petition')
+
 PetitionForm = require('controllers/petition_form')
 PetitionList = require('controllers/petition_list')
 GerhartRoute = require('controllers/gerhart_route')
