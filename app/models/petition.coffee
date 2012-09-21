@@ -30,24 +30,25 @@ class Petition extends Spine.Model
     else
       "#/petitions/#{@id ? @cid}"
 
-  constructor: () ->
-    super
+  assignDefaults: () ->
+    @state = 'pending' unless @state
 
-    # set default values
-    @state = 'pending'
+  save: () ->
+    @assignDefaults()
+    super
 
   getClass: ->
     switch @state
       when 'pending' then 'info'
       when 'approved', 'processed' then 'success'
-      when 'declined' then 'error'
+      when 'rejected' then 'error'
 
   #hurl: (args...) ->
   #  "##{@url(args...)}"
 
   @states: [
     'approved'
-    'declined'
+    'rejected'
     'pending'
     'processed'
   ]

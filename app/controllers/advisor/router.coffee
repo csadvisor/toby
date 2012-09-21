@@ -23,7 +23,7 @@ class AdvisorRouter extends GerhartRoute
       @add controller = new AdvisorPetitionShow(el: @root, petition: Petition.find(params.id))
       controller.render()
 
-    '/petitions/:id/decline': (params) ->
+    '/petitions/:id/reject': (params) ->
       petition = Petition.find(params.id)
       petition.state = 'rejected'
       petition.save()
