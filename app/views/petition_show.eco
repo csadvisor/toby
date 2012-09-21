@@ -1,19 +1,37 @@
 <table class="table table-striped">
   <tbody>
-    <tr><td>id</td><td><%= @id %></td></tr>
-    <tr><td>cid</td><td><%= @cid %></td></tr>
-    <tr><td>student_id</td><td><%= @student_id %></td></tr>
-    <tr><td>advisor_id</td><td><%= @advisor_id %></td></tr>
-    <tr><td>state</td><td><%= @state %></td></tr>
-    <tr><td>stanford_description</td><td><%= @stanford_description %></td></tr>
-    <tr><td>stanford_syllabus</td><td><%= @stanford_syllabus %></td></tr>
-    <tr><td>stanford_textbooks</td><td><%= @stanford_textbooks %></td></tr>
-    <tr><td>transfer_description</td><td><%= @transfer_description %></td></tr>
-    <tr><td>transfer_syllabus</td><td><%= @transfer_syllabus %></td></tr>
-    <tr><td>transfer_textbooks</td><td><%= @transfer_textbooks %></td></tr>
-    <tr><td>course_number</td><td><%= @course_number %></td></tr>
+    <tr><td>Course Number</td><td><%= @course_number %></td></tr>
+    <tr><td>Petition status</td><td><%= @state %></td></tr>
+    <tr><td>Link to undergraduate transcript</td><td><%= @transcript %></td></tr>
+  </tbody>
+</table>
+
+<h2>Transfer course information</h2>
+<table class="table">
+  <tbody>
+    <tr><td>Description</td><td><%= @transfer_description %></td></tr>
+    <tr><td>Syllabus</td><td><%= @transfer_syllabus %></td></tr>
+    <tr><td>Textbooks</td><td><%= @transfer_textbooks %></td></tr>
+  </tbody>
+</table>
+
+<h2>Stanford course information</h2>
+<table class="table">
+  <tbody>
+    <tr><td>description</td><td><%= @stanford_description %></td></tr>
+    <tr><td>syllabus</td><td><%= @stanford_syllabus %></td></tr>
+    <tr><td>textbooks</td><td><%= @stanford_textbooks %></td></tr>
+  </tbody>
+</table>
+
+<h2>Addtional information</h2>
+<table class="table">
+  <tbody>
     <tr><td>created_on</td><td><%= @created_on %></td></tr>
     <tr><td>last_modified</td><td><%= @last_modified %></td></tr>
-    <tr><td>transcript</td><td><%= @transcript %></td></tr>
+    <tr><td>id</td><td><%= @id %></td></tr>
+    <!-- <tr><td>cid</td><td><%= @cid %></td></tr> -->
+    <!-- <tr><td>student_id</td><td><%= @student_id %></td></tr> -->
+    <!-- <tr><td>advisor_id</td><td><%= @advisor_id %></td></tr> -->
   </tbody>
 </table>
