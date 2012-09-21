@@ -1,22 +1,14 @@
-class UserCtx extends Spine.Model
-  @extend Spine.Model.Ajax
+UserCtx = require('models/user_ctx')
 
-  fields = [
-    'user_id'
-    'role'
-  ]
-  @configure 'UserCtx', fields...
+class UserCtxSingleton
 
-  ###
-    @mocked
-    @todo implement this for real
-  ###
-  fetch: () ->
-    #@role = 'advisee'
-    #@role = 'admin'
-    @role = 'advisor'
-    @trigger('refresh')
+  # these will not before Models have all been fetched
+  get: () ->
+    UserCtx.first()
 
-# singleton export
-userCtx = new UserCtx
-module.exports = userCtx
+  role: () ->
+    UserCtx.first().role
+
+# singleton instantiation
+userCtxSingleton = new UserCtxSingleton
+module.exports = userCtxSingleton

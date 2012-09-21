@@ -1,4 +1,4 @@
-UserCtx = require('singletons/user_ctx')
+UserCtx = require('models/user_ctx')
 Petition = require('models/petition')
 
 # for testing
