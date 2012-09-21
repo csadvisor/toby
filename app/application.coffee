@@ -1,3 +1,5 @@
+Spine.Model.host = 'index.php/app'
+
 Fetcher = require('singletons/fetcher')
 UserCtx = require('singletons/user_ctx')
 

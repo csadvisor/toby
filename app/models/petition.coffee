@@ -16,8 +16,19 @@ class Petition extends Spine.Model
     'transcript'
   ]
   @configure 'Petition', fields...
-  @extend Spine.Model.Local
   @extend Spine.Model.Ajax
+
+  @hurl: (args...) ->
+    if args.length > 0
+      "#/petitions/#{args.join('/')}"
+    else
+      "#/petitions"
+
+  hurl: (args...) ->
+    if args.length > 0
+      "#/petitions/#{@id ? @cid}/#{args.join('/')}"
+    else
+      "#/petitions/#{@id ? @cid}"
 
   constructor: () ->
     super
@@ -31,8 +42,8 @@ class Petition extends Spine.Model
       when 'approved', 'processed' then 'success'
       when 'declined' then 'error'
 
-  hurl: (args...) ->
-    "##{@url(args...)}"
+  #hurl: (args...) ->
+  #  "##{@url(args...)}"
 
   @states: [
     'approved'
