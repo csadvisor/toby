@@ -1,0 +1,3 @@
+<!-- TODO make this into a navbar -->
+<h1>Welcome <%= @UserCtx.get().first_name %></h1>
+<h1>Your role is <%= @UserCtx.role() %></h1>

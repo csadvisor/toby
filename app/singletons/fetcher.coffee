@@ -1,10 +1,6 @@
 UserCtx = require('models/user_ctx')
 Petition = require('models/petition')
 
-# for testing
-window.UserCtx = UserCtx
-window.Petition = Petition
-
 d = debug('singletons/fetcher')
 
 toLoad = [

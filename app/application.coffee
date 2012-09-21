@@ -6,12 +6,14 @@ UserCtx = require('singletons/user_ctx')
 Advisee = require('controllers/advisee/router')
 Admin   = require('controllers/admin/router')
 Advisor = require('controllers/advisor/router')
+Header  = require('controllers/header')
 
 d = debug('app')
 
 
 class App extends Spine.Controller
   elements:
+    '.header': 'header'
     '.root': 'root'
 
   render: ->
@@ -31,6 +33,10 @@ class App extends Spine.Controller
       when 'advisor' then controller = new Advisor(el: @root)
       when 'advisee' then controller = new Advisee(el: @root)
     controller.render()
+
+    header = new Header(el: @header)
+    header.render()
+
 
     Spine.Route.setup()
     Spine.Route.navigate(window.location.hash ? '#/')
