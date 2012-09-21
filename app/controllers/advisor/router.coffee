@@ -25,7 +25,7 @@ class AdvisorRouter extends GerhartRoute
 
     '/petitions/:id/decline': (params) ->
       petition = Petition.find(params.id)
-      petition.state = 'declined'
+      petition.state = 'rejected'
       petition.save()
       @navigate('/')
 
