@@ -7,9 +7,6 @@ class AdvisorIndex extends GerhartRoute
   elements:
     '.root': 'root'
 
-  events:
-    'click .filters a': 'filter'
-
   constructor: ->
     super
     @state = 'pending'

@@ -1,5 +1,6 @@
 Petition = require('models/petition')
 GerhartRoute = require('controllers/gerhart_route')
+d = debug('controllers/petitions_list')
 
 class PetitionList extends GerhartRoute
   @configure 'PetitionList'
@@ -7,9 +8,10 @@ class PetitionList extends GerhartRoute
   events:
     'click .filters a': 'filter'
 
-  filter: (e) ->
+  filter: (e) =>
     e.preventDefault()
-    @state = $(e.target).attr('value')
+    @state = @$(e.target).attr('value')
+    d 'filter clicked', @state
     @render()
 
   events = 'create update'
@@ -23,7 +25,7 @@ class PetitionList extends GerhartRoute
     @debug 'render', petitions
     @html require('views/petition_list')({petitions, @columns, @state, @defaultState, @states})
 
-  getPetitions: ->
+  getPetitions: =>
     if @state is 'all'
       Petition.all()
     else
