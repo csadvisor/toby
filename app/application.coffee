@@ -7,6 +7,7 @@ Advisee = require('controllers/advisee/router')
 Admin   = require('controllers/admin/router')
 Advisor = require('controllers/advisor/router')
 Header  = require('controllers/header')
+NonRoll = require('controllers/non_roll')
 
 d = debug('app')
 
@@ -26,12 +27,13 @@ class App extends Spine.Controller
     Fetcher.one('refresh', @refresh)
     Fetcher.fetchAll()
 
-  refresh: () =>
+  refresh: =>
     d 'UserCtx.role', UserCtx.role
     switch UserCtx.role()
       when 'admin' then controller = new Admin(el: @root)
       when 'advisor' then controller = new Advisor(el: @root)
       when 'advisee' then controller = new Advisee(el: @root)
+      else controller = new NonRoll(el: @root)
     controller.render()
 
     header = new Header(el: @header)

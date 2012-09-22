@@ -1,7 +1,7 @@
 <div class="navbar-inner">
   <div class="container">
     <!-- TODO make this into a navbar -->
-    <h3 class="pull-right">Welcome <%= @UserCtx.role().capitalize() %> <%= @UserCtx.get().first_name %></h3>
+    <h3 class="pull-right">Welcome <%= @UserCtx.role()?.capitalize() %> <%= @UserCtx.get().first_name %></h3>
     <h3><a href="#/">Home</a></h3>
   </div>
 </div>
