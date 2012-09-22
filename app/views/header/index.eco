@@ -1,3 +1,7 @@
-<!-- TODO make this into a navbar -->
-<h1>Welcome <%= @UserCtx.get().first_name %></h1>
-<h1>Your role is <%= @UserCtx.role() %></h1>
+<div class="navbar-inner">
+  <div class="container">
+    <!-- TODO make this into a navbar -->
+    <h3 class="pull-right">Welcome <%= @UserCtx.get().first_name %></h3>
+    <h3>Role: <%= @UserCtx.role() %></h3>
+  </div>
+</div>
