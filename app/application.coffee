@@ -39,7 +39,9 @@ class App extends Spine.Controller
 
 
     Spine.Route.setup()
-    Spine.Route.navigate(window.location.hash ? '#/')
+    startRoute = if window.location.hash is '' then '/' else window.location.hash
+    d 'startRoute', startRoute
+    Spine.Route.navigate(startRoute)
 
 
 module.exports = App
