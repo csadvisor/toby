@@ -29,8 +29,4 @@ watch:
 	./node_modules/.bin/brunch watch
 
 push:
-	cp ./public/index.html ../toby/application/views/index.php
-	#rsync ./public/stylesheets ../toby/application/stylesheets
-	#rsync ./public/javascripts ../toby/application/javascripts
-	cp -r ./public/stylesheets ../toby/application/stylesheets
-	cp -r ./public/javascripts ../toby/application/javascripts
+	scripts/push.exp

@@ -4,9 +4,9 @@ exports.config =
     javascripts:
       defaultExtension: 'coffee'
       joinTo:
-        'javascripts/app.js': /^app/
-        'javascripts/vendor/spine.js': /^vendor\/scripts\/spine/
-        'javascripts/vendor/common.js': /^vendor\/scripts\/common/
+        'app.js': /^app/
+        'vendor/spine.js': /^vendor\/scripts\/spine/
+        'vendor/common.js': /^vendor\/scripts\/common/
       order:
         before: [
           'vendor/scripts/common/underscore-1.3.3.js'
@@ -25,11 +25,11 @@ exports.config =
 
     stylesheets:
       defaultExtension: 'less'
-      joinTo: 'stylesheets/app.css'
+      joinTo: 'app.css'
       order:
         before: ['vendor/styles/bootstrap.css']
         after: ['app/styles/main.css']
 
     templates:
       defaultExtension: 'eco'
-      joinTo: 'javascripts/app.js'
+      joinTo: 'app.js'
