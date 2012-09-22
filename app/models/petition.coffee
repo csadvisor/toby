@@ -1,3 +1,5 @@
+UserCtx = require('singletons/user_ctx')
+
 class Petition extends Spine.Model
   fields = [
     'id'
@@ -27,10 +29,12 @@ class Petition extends Spine.Model
   hurl: (args...) ->
     @constructor.hurl(@id ? @cid, args...)
 
-  assignDefaults: () ->
-    @state = 'pending' unless @state
+  assignDefaults: ->
+    @state = 'pending'
+    @student_id = UserCtx.get().id # only students and create petitions
+    @advisor_id = UserCtx.get().advisor_id
 
-  save: () ->
+  create: ->
     @assignDefaults()
     super
 
