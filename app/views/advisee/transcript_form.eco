@@ -1,0 +1,16 @@
+<% if @transcript: %>
+  <p>
+    You currently have a
+    <a href="app/transcript">transcript on file</a>
+  </p>
+<% end %>
+
+<% unless @transcript: %>
+  <legend>Upload a petition</legend>
+<% end %>
+
+  <form class="form <%= "hide" if @transcript %>" method="post" action="app/transcript" enctype="multipart/form-data">
+    <p>Upload a transcript .pdf that has your undergraduate coursework</p>
+    <input type="file" name="userfile" value="upload"></input>
+    <input type="submit" class="btn btn-primary"></input>
+  </form>
