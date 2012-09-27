@@ -2,5 +2,7 @@
   <a href="<%= @hurl('approve') %>">Approve</a>
   <a href="<%= @hurl('reject') %>">Reject</a>
 </h1>
-<a href="app/transcript">View advisee's transcript</a>
+<br/>
+<a href="app/transcript/<%= @student_id %>">View advisee's transcript</a>
+<br/>
 <div class="root"></div>
