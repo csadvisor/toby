@@ -1,8 +1,12 @@
 <table class="table table-striped">
   <tbody>
+    <tr><td>Student Name</td><td><%= @nam_friendly %> <%= @nam_last %></td></tr>
+    <tr>
+      <td>Student Email</td>
+      <td><a href="mailto:<%=@email%>" target="_blank"><%= @email %></a></td>
+    </tr>
     <tr><td>Course Number</td><td><%= @course_number %></td></tr>
     <tr><td>Petition status</td><td><%= @state %></td></tr>
-    <tr><td>Link to undergraduate transcript</td><td><%= @transcript %></td></tr>
   </tbody>
 </table>
 
