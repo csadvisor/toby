@@ -16,6 +16,11 @@ class Petition extends Spine.Model
     'created_on'
     'last_modified'
     'transcript'
+
+    'nam_friendly'
+    'nam_last'
+    'email_acct'
+    'email_host'
   ]
   @configure 'Petition', fields...
   @extend Spine.Model.Ajax
@@ -43,6 +48,12 @@ class Petition extends Spine.Model
       when 'pending' then 'info'
       when 'approved', 'processed' then 'success'
       when 'rejected' then 'error'
+
+  email: ->
+    "#{@email_acct}@#{@email_host}"
+
+  studentName: ->
+    "#{@nam_friendly} #{@nam_last}"
 
   @states: [
     'approved'

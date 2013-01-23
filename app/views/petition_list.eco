@@ -13,6 +13,7 @@
       <tr>
         <th>Course Number</th>
         <th>Petition State</th>
+        <th>Student Name</th>
         <% for column in @columns: %>
           <% if column is 'edit': %><th>Edit</th><% end %>
           <% if column is 'view': %><th>View</th><% end %>
@@ -25,6 +26,7 @@
       <tr class="<%= petition.getClass() %>">
         <td><%= petition.course_number %></td>
         <td><%= petition.state %></td>
+        <td><%= petition.studentName() %></td>
         <% for column in @columns: %>
           <% if column is 'edit': %><td><a href="<%= petition.hurl('edit') %>">edit</a></td><% end %>
           <% if column is 'view': %><td><a href="<%= petition.hurl() %>">view</a></td><% end %>
