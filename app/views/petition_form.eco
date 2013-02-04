@@ -58,7 +58,7 @@
 
   <div class="control-group">
     <div class="controls">
-      <input type="submit" class="btn btn-large btn-success"></input>
+      <input type="submit" class="btn btn-large btn-success" value="Save and Notify your advisor"></input>
     </div>
   </div>
 
