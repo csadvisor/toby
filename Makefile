@@ -29,4 +29,5 @@ watch:
 	./node_modules/.bin/brunch watch
 
 push:
+	brunch build
 	scripts/push.exp

@@ -20,7 +20,7 @@ class Petition extends Spine.Model
     'nam_friendly'
     'nam_last'
     'email_acct'
-    'email_host'
+    'primary_csalias'
   ]
   @configure 'Petition', fields...
   @extend Spine.Model.Ajax
@@ -39,6 +39,10 @@ class Petition extends Spine.Model
     @student_id = UserCtx.get().id # only students and create petitions
     @advisor_id = UserCtx.get().advisor_id
 
+    @nam_friendly = UserCtx.get().first_name
+    @nam_last = UserCtx.get().last_name
+    @primary_csalias = UserCtx.get().csid
+
   create: ->
     @assignDefaults()
     super
@@ -50,7 +54,7 @@ class Petition extends Spine.Model
       when 'rejected' then 'error'
 
   email: ->
-    "#{@email_acct}@#{@email_host}"
+    "#{@primary_csalias}@cs.stanford.edu"
 
   studentName: ->
     "#{@nam_friendly} #{@nam_last}"
