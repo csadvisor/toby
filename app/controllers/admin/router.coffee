@@ -31,6 +31,10 @@ class AdminRouter extends GerhartRoute
       @navigate('/')
 
 
+    '/petitions/:id/print': (params) ->
+      window.print()
+      @navigate("/petitions/#{params.id}")
+
       #'/petitions/:id/delete': (params) ->
       #  Petition.find(params.id).destroy()
       #  @navigate('/')
