@@ -36,6 +36,7 @@
 		"mocha": "1.1.0",
 		"jsdom": "0.2.15",
     "brunch": "*",
-    "should": "*"
+    "should": "*",
+    "mock-http": "git://github.com/jdubie/mock-http.git"
 	}
 }

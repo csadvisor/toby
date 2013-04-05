@@ -1,0 +1,17 @@
+{
+  "static": [
+    "/application/stylesheets/",
+    "/application/javascripts/"
+  ],
+  "routes": {
+    "/index.php/app/user_ctx": {
+      "get": {
+        "id": 13725, "first_name": "Jack", "last_name": "Dubie", "csid":"jdubie",
+        "role": "advisee", "transcript": false, "advisor_id": 4901
+      }
+    },
+    "/index.php/app/petitions": {
+      "get": []
+    }
+  }
+}
