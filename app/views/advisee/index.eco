@@ -2,14 +2,14 @@
 
   <% # form %>
   <div class="span6">
-    <legend>File a petition</legend>
+    <legend><strong>File a petition</strong></legend>
     <div class="transcript"></div>
     <div class="create"></div>
   </div>
   
   <% # sidebar %>
   <div class="span6">
-    <legend>Previously filed petitions</legend>
+    <legend><strong>Previously filed petitions</strong></legend>
     <div class="sidebar"></div>
   </div>
 

@@ -8,7 +8,7 @@
   </div>
 
   <!-- Transfer Course Info -->
-  <legend>Transfer Course Info</legend>
+  <legend><small>Transfer Course Info</small></legend>
 
   <div class="control-group">
     <label class="control-label">Description</label>
@@ -33,7 +33,7 @@
 
 
   <!-- Stanford Course Info -->
-  <legend>Stanford Course Info</legend>
+  <legend><small>Stanford Course Info</small></legend>
   
   <div class="control-group">
     <label class="control-label">Description</label>

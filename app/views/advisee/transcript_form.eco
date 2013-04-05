@@ -5,12 +5,14 @@
   </p>
 <% end %>
 
-<% unless @transcript: %>
-  <legend>Upload a petition</legend>
-<% end %>
-
-  <form class="form <%= "hide" if @transcript %>" method="post" action="app/transcript" enctype="multipart/form-data">
-    <p>Upload a transcript .pdf that has your undergraduate coursework</p>
-    <input type="file" name="userfile" value="upload"></input>
-    <input type="submit" class="btn btn-primary"></input>
-  </form>
+<form class="form <%= "hide" if @transcript %>" method="post" action="app/transcript" enctype="multipart/form-data">
+  <p>
+    Upload a transcript .pdf (official or unofficial) that has your
+    undergraduate coursework
+  </p>
+  <input type="file" name="userfile" value="upload"></input>
+  <div>
+    <br/>
+    <input type="submit" class="btn btn-large btn-primary" value="Upload"></input>
+  </div>
+</form>
