@@ -32,7 +32,7 @@
 <table class="table">
   <tbody>
     <tr><td>Description</td><td><%= @transfer_description %></td></tr>
-    <tr><td>Syllabus</td><td><%= @transfer_syllabus %></td></tr>
+    <tr><td>Syllabus</td><td><%- @syllabus('transfer') %></td></tr>
     <tr><td>Textbooks</td><td><%= @transfer_textbooks %></td></tr>
   </tbody>
 </table>
@@ -41,7 +41,7 @@
 <table class="table">
   <tbody>
     <tr><td>description</td><td><%= @stanford_description %></td></tr>
-    <tr><td>syllabus</td><td><%= @stanford_syllabus %></td></tr>
+    <tr><td>syllabus</td><td><%- @syllabus('stanford') %></td></tr>
     <tr><td>textbooks</td><td><%= @stanford_textbooks %></td></tr>
   </tbody>
 </table>

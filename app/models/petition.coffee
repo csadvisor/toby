@@ -1,5 +1,8 @@
 UserCtx = require('singletons/user_ctx')
 
+LINK_EXP = new RegExp('((https?://)?(([0-9a-z_!~*\'().&=+$%-]+: )?[0-9a-z_!~*\'().&=+$%-]+@)?(([0-9]{1,3}\.){3}[0-9]{1,3}|([0-9a-z_!~*\'()-]+\.)*([0-9a-z][0-9a-z-]{0,61})?[0-9a-z]\.[a-z]{2,6})(:[0-9]{1,4})?((/?)|(/[0-9a-z_!~*\'().;?:@&=+$,%#-]+)+/?))', 'gi')
+# this breaks for hashes at end sometimes
+
 class Petition extends Spine.Model
   fields = [
     'id'
@@ -73,6 +76,10 @@ class Petition extends Spine.Model
 
   courseNumber: ->
     @course_number.toUpperCase()
+
+  syllabus: (school) ->
+    # TODO: figure security problem here
+    @["#{school}_syllabus"].replace(LINK_EXP, '<a href="$1">$1</a>')
 
   @states: [
     'approved'

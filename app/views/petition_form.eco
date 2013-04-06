@@ -18,7 +18,7 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label">Syllabus</label>
+    <label class="control-label">Syllabus (or link to it)</label>
     <div class="controls">
       <textarea name="transfer_syllabus" rows="7"><%= @transfer_syllabus ? '' %></textarea>
     </div>
@@ -43,7 +43,7 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label">Syllabus</label>
+    <label class="control-label">Syllabus (or link to it)</label>
     <div class="controls">
       <textarea name="stanford_syllabus" rows="7"><%= @stanford_syllabus ? '' %></textarea>
     </div>
