@@ -64,9 +64,11 @@ class Petition extends Spine.Model
     "#{@a_alias}@cs.stanford.edu"
 
   studentName: ->
+    return unless @s_first? and @s_last
     "#{@s_first} #{@s_last}"
 
   advisorName: ->
+    return unless @a_first? and @a_last
     "#{@a_first} #{@a_last}"
 
   courseNumber: ->
@@ -81,8 +83,8 @@ class Petition extends Spine.Model
 
   @allSorted: (field = 's_last') ->
     Petition.all().sort (a, b) ->
-      return -1 if a.s_last[0] < b.s_last[0]
-      return  1 if a.s_last[0] > b.s_last[0]
+      return -1 if a.s_last?[0] < b.s_last?[0]
+      return  1 if a.s_last?[0] > b.s_last?[0]
       return 0
 
 
@@ -95,6 +97,6 @@ class Petition extends Spine.Model
 
   # HACK
   dateApproved: ->
-    @created_on
+    @created_on or '0000-00-00'
 
 module.exports = Petition

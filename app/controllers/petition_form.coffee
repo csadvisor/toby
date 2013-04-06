@@ -23,5 +23,7 @@ class PetitionForm extends GerhartRoute
 
     @petition.save()
 
-    
+    # HACK why leading '' necessary?
+    @navigate('', 'petitions', @petition.id)
+
 module.exports = PetitionForm

@@ -1,20 +1,24 @@
 <h3>Waiver summary</h3>
 <table class="table table-striped">
   <tbody>
-    <tr>
-      <td>Student</td>
-      <td>
-        <%= @studentName() %>
-        (<a href="mailto:<%= @studentEmail() %>" target="_blank"><%= @studentEmail() %></a>)
-      </td>
-    </tr>
-    <tr>
-      <td>Advisor</td>
-      <td>
-        <%= @advisorName() %>
-        (<a href="mailto:<%= @advisorEmail() %>" target="_blank"><%= @advisorEmail() %></a>)
-      </td>
-    </tr>
+    <% if @studentName(): %>
+      <tr>
+        <td>Student</td>
+        <td>
+          <%= @studentName() %>
+          (<a href="mailto:<%= @studentEmail() %>" target="_blank"><%= @studentEmail() %></a>)
+        </td>
+      </tr>
+    <% end %>
+    <% if @advisorName(): %>
+      <tr>
+        <td>Advisor</td>
+        <td>
+          <%= @advisorName() %>
+          (<a href="mailto:<%= @advisorEmail() %>" target="_blank"><%= @advisorEmail() %></a>)
+        </td>
+      </tr>
+    <% end %>
     <tr><td>Course Number</td><td><%= @course_number %></td></tr>
     <tr><td>Petition status</td><td><%= @state %></td></tr>
     <% if @dateApproved().toString() isnt '0000-00-00': %>
