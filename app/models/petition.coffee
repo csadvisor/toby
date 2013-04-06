@@ -56,11 +56,17 @@ class Petition extends Spine.Model
       when 'approved', 'processed' then 'success'
       when 'rejected' then 'error'
 
-  email: ->
-    "#{@primary_csalias}@cs.stanford.edu"
+  studentEmail: ->
+    "#{@s_alias}@cs.stanford.edu"
+
+  advisorEmail: ->
+    "#{@a_alias}@cs.stanford.edu"
 
   studentName: ->
     "#{@s_first} #{@s_last}"
+
+  advisorName: ->
+    "#{@a_first} #{@a_last}"
 
   courseNumber: ->
     @course_number.toUpperCase()
