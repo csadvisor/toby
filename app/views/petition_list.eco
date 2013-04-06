@@ -24,7 +24,7 @@
     <tbody>
       <% for petition in @petitions: %>
       <tr class="<%= petition.getClass() %>">
-        <td><%= petition.course_number %></td>
+        <td><%= petition.courseNumber() %></td>
         <td><%= petition.state %></td>
         <td><%= petition.studentName() %></td>
         <% for column in @columns: %>

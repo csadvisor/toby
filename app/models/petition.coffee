@@ -17,10 +17,13 @@ class Petition extends Spine.Model
     'last_modified'
     'transcript'
 
-    'nam_friendly'
-    'nam_last'
-    'email_acct'
-    'primary_csalias'
+    's_first'
+    's_last'
+    's_alias'
+
+    'a_first'
+    'a_last'
+    'a_alias'
   ]
   @configure 'Petition', fields...
   @extend Spine.Model.Ajax
@@ -57,7 +60,10 @@ class Petition extends Spine.Model
     "#{@primary_csalias}@cs.stanford.edu"
 
   studentName: ->
-    "#{@nam_friendly} #{@nam_last}"
+    "#{@s_first} #{@s_last}"
+
+  courseNumber: ->
+    @course_number.toUpperCase()
 
   @states: [
     'approved'
@@ -65,5 +71,19 @@ class Petition extends Spine.Model
     'pending'
     'processed'
   ]
+
+  @allSorted: (field = 's_last') ->
+    Petition.all().sort (a, b) ->
+      return -1 if a.s_last[0] < b.s_last[0]
+      return  1 if a.s_last[0] > b.s_last[0]
+      return 0
+
+
+  @findAllByAttributeSorted: (key, value, field = 's_last') ->
+    petitions = Petition.allSorted()
+    result = []
+    for pet in petitions
+      result.push(pet) if pet?[key] is value
+    result
 
 module.exports = Petition

@@ -27,9 +27,9 @@ class PetitionList extends GerhartRoute
 
   getPetitions: =>
     if @state is 'all'
-      Petition.all()
+      Petition.allSorted()
     else
-      Petition.findAllByAttribute('state', @state)
+      Petition.findAllByAttributeSorted('state', @state)
 
   release: ->
     super
