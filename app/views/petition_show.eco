@@ -17,7 +17,9 @@
     </tr>
     <tr><td>Course Number</td><td><%= @course_number %></td></tr>
     <tr><td>Petition status</td><td><%= @state %></td></tr>
-    <tr><td>Date approved</td><td><%= @dateApproved() %></td></tr>
+    <% if @dateApproved().toString() isnt '0000-00-00': %>
+      <tr><td>Date approved</td><td><%= @dateApproved() %></td></tr>
+    <% end %>
   </tbody>
 </table>
 
