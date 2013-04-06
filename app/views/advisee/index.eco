@@ -2,15 +2,26 @@
 
   <% # form %>
   <div class="span6">
-    <legend><strong>File a petition</strong></legend>
+    <legend><strong>Create a petition</strong></legend>
     <div class="transcript"></div>
     <div class="create"></div>
   </div>
   
   <% # sidebar %>
   <div class="span6">
-    <legend><strong>Previously filed petitions</strong></legend>
+    <legend><strong>Saved petitions</strong></legend>
     <div class="sidebar"></div>
+    <p>Done creating your petitions? Notify your advisor so they can review them.<p>
+    <div class="row">
+      <div class="span2">
+        <span class="btn notifyAdvisor">Notify Advisor</span>
+      </div>
+      <div class="span4">
+        <div class="notifyAlert alert alert-success hide">
+          Your advisor has been notified
+        </div>
+      </div>
+    </div>
   </div>
 
 </div>

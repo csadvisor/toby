@@ -13,6 +13,11 @@ class AdviseeIndex extends GerhartRoute
     '.transcript': 'elTranscript'
     '.create': 'elCreate'
     '.sidebar': 'elSidebar'
+    '.notifyAdvisor': 'notifyButton'
+    '.notifyAlert': 'notifyAlert'
+
+  events:
+    'click .notifyAdvisor': 'notifyAdvisor'
 
   render: () ->
     super
@@ -32,5 +37,12 @@ class AdviseeIndex extends GerhartRoute
       @elTranscript.html require('views/advisee/transcript_form')(transcript: false)
 
     sidebar.render()
+
+  notifyAdvisor: () =>
+    # HACK: should be in controller state - not in DOM
+    return if @notifyButton.attr('class').split(' ').indexOf('disabled') isnt -1
+    @notifyButton.addClass('disabled')
+    fadeIn = => @notifyAlert.fadeIn()
+    $.ajax(type: 'post', url: 'app/notify').done(fadeIn)
 
 module.exports = AdviseeIndex
