@@ -20,6 +20,7 @@ class Petition extends Spine.Model
     's_first'
     's_last'
     's_alias'
+    's_school'
 
     'a_first'
     'a_last'

@@ -20,6 +20,7 @@
     <% if @dateApproved().toString() isnt '0000-00-00': %>
       <tr><td>Date approved</td><td><%= @dateApproved() %></td></tr>
     <% end %>
+    <tr><td>Undergraduate School</td><td><%= @s_school %></td></tr>
   </tbody>
 </table>
 
