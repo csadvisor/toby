@@ -1,4 +1,4 @@
-<span class="h1">Actions:</span>
+<span>Actions:</span>
 <a class="btn btn-large" href="<%= @hurl('print') %>">Print</a>
 <a class="btn btn-large" href="<%= @hurl('process') %>">Process</a>
 <div class="root"></div>

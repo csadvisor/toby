@@ -1,5 +1,4 @@
-<h1>
-  <a href="<%= @hurl('edit') %>">Edit</a>
-  <a href="<%= @hurl('delete') %>">Delete</a>
-</h1>
+<span>Actions:</span>
+<a class="btn btn-default btn-large" href="<%= @hurl('edit') %>">Edit</a>
+<a class="btn btn-danger btn-large" href="<%= @hurl('delete') %>">Delete</a>
 <div class="root"></div>
