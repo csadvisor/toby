@@ -16,7 +16,7 @@ class AdviseePetitionEdit extends GerhartRoute
     form.render()
 
   update: =>
-    console.error 'update'
+    console.log 'update'
     @navigate(@petition.hurl())
 
 module.exports = AdviseePetitionEdit
