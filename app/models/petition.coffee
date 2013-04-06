@@ -92,4 +92,8 @@ class Petition extends Spine.Model
       result.push(pet) if pet?[key] is value
     result
 
+  # HACK
+  dateApproved: ->
+    @created_on
+
 module.exports = Petition

@@ -1,8 +1,7 @@
-<h1>
-  <a href="<%= @hurl('approve') %>">Approve</a>
-  <a href="<%= @hurl('reject') %>">Reject</a>
-</h1>
+<span class="h1">Actions:</span>
+<a class="btn btn-success btn-large" href="<%= @hurl('approve') %>">Approve</a>
+<a class="btn btn-danger btn-large" href="<%= @hurl('reject') %>">Reject</a>
+<br/>
 <br/>
 <a href="app/transcript/<%= @student_id %>">View advisee's transcript</a>
-<br/>
 <div class="root"></div>

@@ -1,3 +1,4 @@
+<h3>Waiver summary</h3>
 <table class="table table-striped">
   <tbody>
     <tr>
@@ -16,10 +17,11 @@
     </tr>
     <tr><td>Course Number</td><td><%= @course_number %></td></tr>
     <tr><td>Petition status</td><td><%= @state %></td></tr>
+    <tr><td>Date approved</td><td><%= @dateApproved() %></td></tr>
   </tbody>
 </table>
 
-<h2>Transfer course information</h2>
+<h3>Transfer course information</h3>
 <table class="table">
   <tbody>
     <tr><td>Description</td><td><%= @transfer_description %></td></tr>
@@ -28,7 +30,7 @@
   </tbody>
 </table>
 
-<h2>Stanford course information</h2>
+<h3>Stanford course information</h3>
 <table class="table">
   <tbody>
     <tr><td>description</td><td><%= @stanford_description %></td></tr>
@@ -37,10 +39,10 @@
   </tbody>
 </table>
 
-<h2>Addtional information</h2>
+<h3>Addtional information</h3>
 <table class="table">
   <tbody>
-    <tr><td>created_on</td><td><%= @created_on %></td></tr>
+    <!-- <tr><td>created_on</td><td><%= @created_on %></td></tr> -->
     <tr><td>last_modified</td><td><%= @last_modified %></td></tr>
     <tr><td>id</td><td><%= @id %></td></tr>
     <!-- <tr><td>cid</td><td><%= @cid %></td></tr> -->
