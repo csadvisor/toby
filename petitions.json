@@ -1,17 +1,3 @@
-{
-  "static": [
-    "/application/stylesheets/",
-    "/application/javascripts/"
-  ],
-  "routes": {
-    "/index.php/app/user_ctx": {
-      "get": {
-        "id": 13725, "first_name": "Jack", "last_name": "Dubie", "csid":"jdubie",
-        "role": "admin", "transcript": false, "advisor_id": 4901
-      }
-    },
-    "/index.php/app/petitions": {
-      "get": 
 [
    {
       "student_id" : "14511",
@@ -520,7 +506,3 @@
       "transfer_syllabus" : "Math 29 covered Chapter 1 through Chapter 6 of the text book listed below.\r\n\r\nMath 30 covered Chapter 7 to Chapter 9 of the the text book listed below."
    }
 ]
-
-    }
-  }
-}
