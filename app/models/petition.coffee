@@ -79,7 +79,8 @@ class Petition extends Spine.Model
 
   syllabus: (school) ->
     # TODO: figure security problem here
-    @["#{school}_syllabus"].replace(LINK_EXP, '<a href="$1">$1</a>')
+    # @["#{school}_syllabus"].replace(LINK_EXP, '<a href="$1">$1</a>')
+    @["#{school}_syllabus"]
 
   @states: [
     'approved'
@@ -105,5 +106,9 @@ class Petition extends Spine.Model
   # HACK
   dateApproved: ->
     @created_on or '0000-00-00'
+
+  # additional petition fields should not be visible to admin
+  visible: ->
+    UserCtx.get().role isnt 'admin'
 
 module.exports = Petition
