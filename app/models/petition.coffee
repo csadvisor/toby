@@ -19,6 +19,7 @@ class Petition extends Spine.Model
     'created_on'
     'last_modified'
     'transcript'
+    'reason'
 
     's_first'
     's_last'

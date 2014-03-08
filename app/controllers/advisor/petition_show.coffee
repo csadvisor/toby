@@ -6,10 +6,25 @@ class AdvisorPetitionShow extends GerhartRoute
 
   elements:
     '.root': 'root'
+    '.reason': 'reason'
+
+  events:
+  	'click input.approve': 'approvePetition'
+  	'click input.reject': 'rejectPetition'
 
   render: ->
     super(@petition)
     show = new PetitionShow({el: @root, @petition})
     show.render()
+
+  approvePetition: (e) ->
+  	@petition.reason = @reason[0].value
+  	@petition.save()
+  	@navigate(@petition.hurl('approve'))
+
+  rejectPetition: (e) ->
+  	@petition.reason = @reason[0].value
+  	@petition.save()
+  	@navigate(@petition.hurl('reject'))
 
 module.exports = AdvisorPetitionShow

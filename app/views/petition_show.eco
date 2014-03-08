@@ -21,6 +21,7 @@
     <% end %>
     <tr><td>Course Number</td><td><%= @courseNumber() %></td></tr>
     <tr><td>Petition status</td><td><%= @state %></td></tr>
+    <tr><td>Advisor comment</td><td><%= @reason %></td></tr>
     <% if @dateApproved().toString() isnt '0000-00-00': %>
       <tr><td>Date approved</td><td><%= @dateApproved() %></td></tr>
     <% end %>

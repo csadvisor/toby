@@ -1,7 +1,9 @@
-<span class="h1">Actions:</span>
-<a class="btn btn-success btn-large" href="<%= @hurl('approve') %>">Approve</a>
-<a class="btn btn-danger btn-large" href="<%= @hurl('reject') %>">Reject</a>
-<br/>
-<br/>
+<h3>Actions:</h3>
+<form class="form-inline process">
+	<input type="button" value="Approve" class="btn btn-success btn-large approve">
+	<input type="button" value="Reject" class="btn btn-danger btn-large reject" type="button">
+	<textarea class="reason" placeholder="Optional comment" type="text" />
+</form>
+
 <a href="app/transcript/<%= @student_id %>">View advisee's transcript</a>
 <div class="root"></div>
